@@ -8,17 +8,19 @@
     .container{
         background-color: map-get($Neutral, "White");
         width: min(93%, 40rem);
-        height: 30rem;
         border-radius: 1.25rem 1.25rem 6.25rem 1.25rem;
         form{
             font-family: form-field;
             margin-top: 3.125rem;
             margin-left: 5%;
-            @media screen and (max-width: 375px){
+            @media screen and (max-width: 420px){
                 justify-content: center;
             }
             div{
-                width: 30%;
+                width: max(25%, 7rem);
+                @media screen and (max-width: 374px){
+                    width: 35%;
+                }
                 label{
                     font-size: 0.8rem;
                     letter-spacing: 0.2rem;
@@ -37,6 +39,7 @@
                 position: relative;
                 top: 3.2rem;
                 border: 1px solid map-get($Neutral, "Light-grey");
+                margin-inline: 1.5rem;
             }
             button{
                 position: relative;
@@ -48,6 +51,9 @@
                 cursor: pointer;
                 transition: 0.2s ease;
                 transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                @media screen and (min-width: 500px){
+                    left: 85%;
+                }
                 &:hover{
                     background-color: map-get($Neutral, "Off-black")
                 }
@@ -61,8 +67,16 @@
         .result{
             font-family: result;
             margin-top: 2rem;
+            margin-bottom: 3.125rem;
             h2{
-                font-size: clamp();
+                font-size: 3.1875rem;
+                @media screen and (min-width: 721px) and (max-width: 1440px){
+                    font-size: 4.3rem;
+                    margin-left: 2rem;
+                }
+                @media screen and (min-width: 400px) and (max-width: 720px){
+                    font-size: 3.75rem;
+                }
                 span{
                     margin-right: 0.5rem;
                     color: map-get($Primary, "Purple");

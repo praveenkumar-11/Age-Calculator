@@ -36,7 +36,6 @@ input:focus {
 .main .container {
   background-color: hsl(0, 0%, 100%);
   width: min(93%, 40rem);
-  height: 30rem;
   border-radius: 1.25rem 1.25rem 6.25rem 1.25rem;
 }
 .main .container form {
@@ -44,13 +43,18 @@ input:focus {
   margin-top: 3.125rem;
   margin-left: 5%;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
   .main .container form {
     justify-content: center;
   }
 }
 .main .container form div {
-  width: 30%;
+  width: max(25%, 7rem);
+}
+@media screen and (max-width: 374px) {
+  .main .container form div {
+    width: 35%;
+  }
 }
 .main .container form div label {
   font-size: 0.8rem;
@@ -68,6 +72,7 @@ input:focus {
   position: relative;
   top: 3.2rem;
   border: 1px solid hsl(0, 0%, 86%);
+  margin-inline: 1.5rem;
 }
 .main .container .center-part button {
   position: relative;
@@ -80,6 +85,11 @@ input:focus {
   transition: 0.2s ease;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+@media screen and (min-width: 500px) {
+  .main .container .center-part button {
+    left: 85%;
+  }
+}
 .main .container .center-part button:hover {
   background-color: hsl(0, 0%, 8%);
 }
@@ -90,9 +100,21 @@ input:focus {
 .main .container .result {
   font-family: result;
   margin-top: 2rem;
+  margin-bottom: 3.125rem;
 }
 .main .container .result h2 {
-  font-size: clamp;
+  font-size: 3.1875rem;
+}
+@media screen and (min-width: 721px) and (max-width: 1440px) {
+  .main .container .result h2 {
+    font-size: 4.3rem;
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 720px) {
+  .main .container .result h2 {
+    font-size: 3.75rem;
+  }
 }
 .main .container .result h2 span {
   margin-right: 0.5rem;
