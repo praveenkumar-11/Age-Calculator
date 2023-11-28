@@ -1,16 +1,78 @@
 @import "colors";
 @import "reset";
+@import "fonts";
 @import "mixins";
 
 .main{
     height: 100vh;
-    background-color: aqua;
     .container{
         background-color: map-get($Neutral, "White");
-        width: min(93%, 30rem);
-        height: 30.375rem;
+        width: min(93%, 40rem);
+        height: 30rem;
         border-radius: 1.25rem 1.25rem 6.25rem 1.25rem;
         form{
+            font-family: form-field;
+            margin-top: 3.125rem;
+            margin-left: 5%;
+            @media screen and (max-width: 375px){
+                justify-content: center;
+            }
+            div{
+                width: 30%;
+                label{
+                    font-size: 0.8rem;
+                    letter-spacing: 0.2rem;
+                    color: map-get($Neutral, "Smokey-grey");
+                }
+                input{
+                    font-size: 1.2rem;
+                    color: map-get($Neutral, "Off-black");
+                }
+            }
+        }
+
+        .center-part{
+            margin-top: 1.5rem;
+            hr{
+                position: relative;
+                top: 3.2rem;
+                border: 1px solid map-get($Neutral, "Light-grey");
+            }
+            button{
+                position: relative;
+                left: 40%;
+                background-color: map-get($Primary, "Purple");
+                border-radius: 50%;
+                border: 1px solid transparent;
+                padding: 1rem;
+                cursor: pointer;
+                transition: 0.2s ease;
+                transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                &:hover{
+                    background-color: map-get($Neutral, "Off-black")
+                }
+                img{
+                    height: 2rem;
+                    width: auto;
+                }
+            }
+        }
+
+        .result{
+            font-family: result;
+            margin-top: 2rem;
+            h2{
+                font-size: clamp();
+                span{
+                    margin-right: 0.5rem;
+                    color: map-get($Primary, "Purple");
+                }
+            }
         }
     }
+}
+
+.attribution{
+    z-index: 10;
+
 }

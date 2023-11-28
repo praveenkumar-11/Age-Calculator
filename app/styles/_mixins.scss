@@ -1,12 +1,15 @@
 input{
     padding-left: 1rem;
-    padding-right: 1.5rem;
-    padding-block: 1.0625rem;
-    width: 5.4375rem;
-    height: 3.4375m;
+    padding-right: 0.5rem;
+    padding-block: 0.7rem;
+    //width: 5.4375rem;
+    height: 3.4375rem;
     border-radius: 0.5rem;
     border: 1px solid map-get($Neutral, "Light-grey");
+    margin-right: 1.2rem;
+    &:focus{
+        border: 1px solid map-get($Primary, "Purple");
+        outline: none;
+    }
 }
-form :first-child{
-    margin-right: 0.5rem;
-}
+
