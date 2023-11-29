@@ -25,6 +25,9 @@
                     font-size: 0.8rem;
                     letter-spacing: 0.2rem;
                     color: map-get($Neutral, "Smokey-grey");
+                    &.error{
+                        color: map-get($Primary, "Light-red");
+                    }
                 }
                 input{
                     font-size: 1.2rem;
@@ -77,6 +80,9 @@
                 @media screen and (min-width: 400px) and (max-width: 720px){
                     font-size: 3.75rem;
                 }
+                @media screen and (max-width: 338px){
+                    font-size: 2.75rem;
+                }
                 span{
                     margin-right: 0.5rem;
                     color: map-get($Primary, "Purple");
@@ -85,7 +91,6 @@
         }
     }
 }
-
 .attribution{
     z-index: 10;
 

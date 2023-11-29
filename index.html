@@ -29,24 +29,27 @@
         <form action="#" class="d-flex justify-content-left">
     
           <div class="d-flex flex-column text-align-left day">
-            <label>
-              DAY<!-- &nbsp; &nbsp; &nbsp; -->
+            <label class= "label">
+              DAY
             </label>
-              <input type="text" name="Day" placeholder= "DD">
+            <input type="number" class="Day" min= "1" max= "31" placeholder= "DD">
+            <p class="error"></p>
           </div>
-    
+  
           <div class="d-flex flex-column text-align-left month">
-            <label>
+            <label class= "label">
               MONTH
             </label>
-              <input type="text" name="month" placeholder= "MM">
+            <input type="number" class="Month" min= "1" placeholder= "MM">
+            <p class="error"></p>
           </div>
     
           <div class="d-flex flex-column text-align-left year">
-            <label>
+            <label class= "label">
               YEAR 
             </label>
-              <input type="text" name="year" placeholder= "YYYY">
+            <input type="number" class="Year" min= "1000" placeholder= "YYYY">
+            <p class="error"></p>
           </div>
     
         </form>

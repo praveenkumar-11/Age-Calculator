@@ -7,9 +7,24 @@ input{
     border-radius: 0.5rem;
     border: 1px solid map-get($Neutral, "Light-grey");
     margin-right: 1.2rem;
+
+    -moz-appearance: textfield;
     &:focus{
         border: 1px solid map-get($Primary, "Purple");
         outline: none;
     }
+    &::-webkit-inner-spin-button,
+    &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+    }
 }
 
+p.error{
+    color: map-get($Primary, "Light-red");
+    font-family: error;
+    font-size: 0.7rem;
+}
+
+input.error{
+    border: 1px solid map-get($Primary, "Light-red");
+}

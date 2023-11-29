@@ -16,6 +16,10 @@ body {
   font-family: result;
   src: url(/assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
+@font-face {
+  font-family: error;
+  src: url(/assets/fonts/Poppins-Italic.ttf);
+}
 input {
   padding-left: 1rem;
   padding-right: 0.5rem;
@@ -24,10 +28,24 @@ input {
   border-radius: 0.5rem;
   border: 1px solid hsl(0, 0%, 86%);
   margin-right: 1.2rem;
+  -moz-appearance: textfield;
 }
 input:focus {
   border: 1px solid hsl(259, 100%, 65%);
   outline: none;
+}
+input::-webkit-inner-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+p.error {
+  color: hsl(0, 100%, 67%);
+  font-family: error;
+  font-size: 0.7rem;
+}
+
+input.error {
+  border: 1px solid hsl(0, 100%, 67%);
 }
 
 .main {
@@ -60,6 +78,9 @@ input:focus {
   font-size: 0.8rem;
   letter-spacing: 0.2rem;
   color: hsl(0, 1%, 44%);
+}
+.main .container form div label.error {
+  color: hsl(0, 100%, 67%);
 }
 .main .container form div input {
   font-size: 1.2rem;
@@ -114,6 +135,11 @@ input:focus {
 @media screen and (min-width: 400px) and (max-width: 720px) {
   .main .container .result h2 {
     font-size: 3.75rem;
+  }
+}
+@media screen and (max-width: 338px) {
+  .main .container .result h2 {
+    font-size: 2.75rem;
   }
 }
 .main .container .result h2 span {
