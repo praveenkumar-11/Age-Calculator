@@ -103,14 +103,18 @@ function calc_diff(user_date){
         }
         if(m <= diff_months){
             result[1].innerHTML= m;
-            m++
+            m++;
         }
         if(d <= diff_days){
             result[2].innerHTML= d;
-            d++
+            d++;
         }
 
-    }, 50);
+    }, );
+
+
+    console.log("Before clearing : "+timer);
+    //setTimeout(() => {clearInterval(timer);console.log("Cleared")}, 3000)
     //console.log("Diff: "+diff_days);
 
 }
