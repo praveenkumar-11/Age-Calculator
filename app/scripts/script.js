@@ -83,10 +83,34 @@ btn.addEventListener("click", () => {
 
 function calc_diff(user_date){
 
-    const result= querySelectorAll(".result");
+    const result= document.querySelectorAll(".result span");
     const diff_years= today.getFullYear() - user_date.getFullYear();
     const diff_months= today.getMonth() - user_date.getMonth();
     const diff_days= today.getDate() - user_date.getDate();
-    console.log("Diff: "+diff_days);
+
+    const op= [diff_years, diff_months, diff_days];
+
+    /* result[0].innerHTML= diff_years;
+    result[1].innerHTML= diff_months;
+    result[2].innerHTML= diff_days; */
+    let y= 0;
+    let m= 0;
+    let d= 0;
+    const timer= setInterval(() => {
+        if(y <= diff_years){
+            result[0].innerHTML= y;
+            y++;
+        }
+        if(m <= diff_months){
+            result[1].innerHTML= m;
+            m++
+        }
+        if(d <= diff_days){
+            result[2].innerHTML= d;
+            d++
+        }
+
+    }, 50);
+    //console.log("Diff: "+diff_days);
 
 }
