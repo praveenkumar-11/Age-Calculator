@@ -88,6 +88,8 @@ function calc_diff(user_date){
     const diff_months= today.getMonth() - user_date.getMonth();
     const diff_days= today.getDate() - user_date.getDate();
 
+    console.log();
+
     const op= [diff_years, diff_months, diff_days];
 
     /* result[0].innerHTML= diff_years;
@@ -96,7 +98,12 @@ function calc_diff(user_date){
     let y= 0;
     let m= 0;
     let d= 0;
-    const timer= setInterval(() => {
+    let speed= 100;
+
+    console.log("Speed: "+diff_days);
+
+    const timerFn= () => {
+        speed /= 10;
         if(y <= diff_years){
             result[0].innerHTML= y;
             y++;
@@ -109,11 +116,9 @@ function calc_diff(user_date){
             result[2].innerHTML= d;
             d++;
         }
-
-    }, );
-
-
-    console.log("Before clearing : "+timer);
+        setTimeout(timerFn, speed);
+    }
+    const timer= setTimeout(timerFn, speed);
     //setTimeout(() => {clearInterval(timer);console.log("Cleared")}, 3000)
     //console.log("Diff: "+diff_days);
 
