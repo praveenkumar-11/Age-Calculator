@@ -84,13 +84,69 @@ btn.addEventListener("click", () => {
 function calc_diff(user_date){
 
     const result= document.querySelectorAll(".result span");
-    const diff_years= today.getFullYear() - user_date.getFullYear();
-    const diff_months= today.getMonth() - user_date.getMonth();
-    const diff_days= today.getDate() - user_date.getDate();
+    let diff_years= today.getFullYear() - user_date.getFullYear();
+    let diff_months= today.getMonth() - user_date.getMonth();
+    let diff_days= today.getDate() - user_date.getDate(); 
 
-    console.log();
+    //Function to find total days in the given month
+    function find_Total_Days_In_The_Month(prev_month){
+        if(prev_month <= 6 && prev_month % 2 == 0){
+            return ((31 - user_date.getDate()) + today.getDate());
+        }
+        else if(prev_month <= 6 && prev_month % 2 != 0){
+            return ((30 - user_date.getDate()) + today.getDate());
+        }
+        else if(prev_month > 6 && prev_month % 2 != 0){
+            return ((31 - user_date.getDate()) + today.getDate());
+        }
+        else if(prev_month > 6 && prev_month % 2 == 0){
+            return ((30 - user_date.getDate()) + today.getDate());
+        }
+        else
+            return -1;
+    }
 
-    const op= [diff_years, diff_months, diff_days];
+
+    if(today.getMonth() == user_date.getMonth()){
+
+        //If birth date is higher than today date (Birthday finished)
+        if(today.getDate() < user_date.getDate()){
+            diff_months= 11;
+            diff_years= diff_years - 1;
+            const prev_month= today.getMonth() - 1;
+            diff_days= find_Total_Days_In_The_Month(prev_month);
+            /* if(prev_month <= 6 && prev_month % 2 == 0){
+                diff_days= ((31 - user_date.getDate()) + today.getDate()) + 1;
+            }
+            else{
+                diff_days= ((30 - user_date.getDate()) + today.getDate()) + 1;
+            }
+            
+            if(prev_month > 6 && prev_month % 2 != 0){
+                diff_days= ((31 - user_date.getDate()) + today.getDate()) + 1;
+            }
+            else{
+                diff_days= ((30 - user_date.getDate()) + today.getDate()) + 1;
+            } */
+        }
+
+        //If birth date is lesser than today date (Birthday is not finished)
+        /* if(today.getDate() > user_date.getDate()){
+            diff_months= 11;
+            diff_years= diff_years - 1;
+            diff_days= (find_Total_Days_In_The_Month(today.getMonth() - 1)) - 1;
+        } */
+    }
+
+    if(today.getMonth() > user_date.getMonth()){
+        if(today.getDate() < user_date.getDate()){
+            diff_months= diff_months - 1;
+            diff_days= find_Total_Days_In_The_Month(today.getMonth() - 1);
+        }
+    }
+    console.log("Pre : "+diff_days);
+
+
 
     /* result[0].innerHTML= diff_years;
     result[1].innerHTML= diff_months;
@@ -123,3 +179,6 @@ function calc_diff(user_date){
     //console.log("Diff: "+diff_days);
 
 }
+
+
+
