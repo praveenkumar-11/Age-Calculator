@@ -48,6 +48,22 @@ input.error {
   border: 1px solid hsl(0, 100%, 67%);
 }
 
+.wishing-msg {
+  display: none;
+  width: min(93%, 40rem);
+  height: 3rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  margin-bottom: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.wishing-msg .msg {
+  font-family: result;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
 .main {
   height: 100vh;
 }

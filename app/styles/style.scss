@@ -3,6 +3,24 @@
 @import "fonts";
 @import "mixins";
 
+
+.wishing-msg{
+    display: none;
+    width: min(93%, 40rem);
+    height: 3rem;
+    border-radius: 1rem;
+    background-color: map-get($Neutral, "White");
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    .msg{
+        font-family: result;
+        font-size: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+
 .main{
     height: 100vh;
     .container{
