@@ -19,20 +19,22 @@ btn.addEventListener("click", () => {
     const errors= document.querySelectorAll("p.error");
     const labels= document.querySelectorAll("label");
 
-    const wish= document.querySelector(".wishing-msg")
-
+    
     //Setting isValid to find whether there is error or not. 
     let isValid= true;
     
     //Creating another date method and setting user given date,month and year to it.  
     const user_date= new Date(year, month -1 , day);
-
+    
+    //If today is user birthday,display a wish message 
+    const wish= document.querySelector(".wishing-msg")
     if(user_date.getDate() == today.getDate() && user_date.getMonth() == today.getMonth()){
         wish.style.display= "flex";
     }
     else{
         wish.style.display= "none";
     }
+
 
     for(let i=0 ; i<inputs.length ; i++){ 
         
