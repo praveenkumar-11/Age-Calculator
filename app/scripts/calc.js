@@ -49,12 +49,20 @@ export default function calc_diff(today, user_date){
     let y= 0;
     let m= 0;
     let d= 0;
-    let speed= 100;
+    let speed= 20;
+
+    //Changing the speed of the animation based on the length of the number.
+    if(diff_years <= 100){
+        speed= speed;
+    }
+    else if(diff_years > 100 && diff_years < 1000){
+        speed= 10;
+    }
+    else{
+        speed= 0.2;
+    }
 
     const timerFn= () => {
-
-        //Dividing the speed by 10, so it will slow down when running
-        speed /= 10;
 
         //Running from 0 to final number
         if(y <= diff_years){
