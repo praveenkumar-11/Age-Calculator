@@ -52,7 +52,7 @@ export default function calc_diff(today, user_date){
     let speed= 20;
 
     //Changing the speed of the animation based on the length of the number.
-    if(diff_years <= 100){
+    /* if(diff_years <= 100){
         speed= speed;
     }
     else if(diff_years > 100 && diff_years < 1000){
@@ -60,9 +60,19 @@ export default function calc_diff(today, user_date){
     }
     else{
         speed= 0.2;
-    }
+    } */
 
     const timerFn= () => {
+
+        //Reducing the speed by 0.1 everytime this function executes.
+        speed= speed - 0.1;
+        
+        //Clearing the Interval if the variables d,m and y exceeds its corresponding limits(diff_days,diff_months,diff_years)
+        if(y > diff_years && m > diff_months && d > diff_days){
+            console.log("true")
+            clearInterval(timer);
+            return ; 
+        }
 
         //Running from 0 to final number
         if(y <= diff_years){
@@ -77,8 +87,8 @@ export default function calc_diff(today, user_date){
             result[2].innerHTML= d;
             d++;
         }
-        setTimeout(timerFn, speed);
-    }
 
-    const timer= setTimeout(timerFn, speed);
+    }
+    
+    const timer= setInterval(timerFn, speed);
 }
