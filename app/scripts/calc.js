@@ -10,7 +10,19 @@ export default function calc_diff(today, user_date){
 
     //Function to find total days in the given month
     function find_Total_Days_In_The_Month(prev_month){
-        if(prev_month <= 6 && prev_month % 2 == 0){
+
+        //If the prev month is february we need to check if the year is leap year or not/
+        if(prev_month == 1){
+            if(year % 4 == 0 && year % 400 == 0 && year % 100 != 0){
+                return ((29 - user_date.getDate()) + today.getDate());
+            }
+            else{
+                return ((28 - user_date.getDate()) + today.getDate());
+            }
+        }
+
+
+        else if(prev_month <= 6 && prev_month % 2 == 0){
             return ((31 - user_date.getDate()) + today.getDate());
         }
         else if(prev_month <= 6 && prev_month % 2 != 0){
