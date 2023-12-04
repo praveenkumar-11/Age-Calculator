@@ -45,6 +45,20 @@ export default function calc_diff(today, user_date){
         }
     }
 
+    if(today.getMonth() < user_date.getMonth()){
+        diff_years= diff_years - 1;
+        diff_months= (12 - user_date.getMonth()) + today.getMonth();
+        if(today.getDate() < user_date.getDate()){
+            diff_months = diff_months - 1;
+            if(today.getMonth() == 0){
+                diff_days= find_Total_Days_In_The_Month(11);
+            }
+            else{
+                diff_days= find_Total_Days_In_The_Month(today.getMonth() - 1);
+            }
+        }
+    }
+
     //Declaring and initalizing some variables.It is going to animated to the final number from 0.
     let y= 0;
     let m= 0;
