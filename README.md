@@ -33,7 +33,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: 
   - See the age numbers animate to their final number when the form is submitted
-  - Get a birthday wish message if the user's birthday aligns with today 
+  - Receive a birthday greeting if the user's birthday falls on this day.
 
 
 ### Screenshot
@@ -43,8 +43,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/praveenkumar-11/Age-Calculator)
+- Live Site URL 1: [Cloudflare](https://age-calculator-axi.pages.dev/)
+- Live Site URL 2: [Github Pages](https://praveenkumar-11.github.io/Age-Calculator/)
 
 
 ## My process
